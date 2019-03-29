@@ -1,6 +1,8 @@
 const {searchDB, SearchInputModel, Calendar, Groups} = require ('./index.js');
 const faker = require('faker');
 
+//possibly drop these tables and write new ones
+
 const fakeDataMaker = function () {
     for (var i = 0; i < 100; i++) {
         fakeSearchInputData.push(
