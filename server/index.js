@@ -1,7 +1,7 @@
 const express = require('express');
 // const cors = require('cors');
 let app = express();
-const {searchDB} = require('../database/index.js')
+const {searchDB, SearchInputModel} = require('../database/index.js')
 const bodyParser = require('body-parser')
 // app.use(bodyParser.urlencoded());
 // app.use(bodyParser.json());
@@ -10,14 +10,14 @@ const bodyParser = require('body-parser')
 
 
 app.get('/Input', function (req, res, next) {
-    console.log('server get req.body = ', req.body)
 
-    //find FN
+    SearchInputModel.find({"city" : "North Arno"}, function(err, hostels){
+        if (err) {
+            return err;
+        }
+        res.send(hostels);
+    })
 
-    res.send(bodyParser(req.body))
-
-    //need to export a find function from DB
-    //just like save in fullstack review
 
 
 });

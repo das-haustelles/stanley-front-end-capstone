@@ -27,15 +27,7 @@ var searchGroupsSchema = mongoose.Schema({
 
 var GroupsModel = mongoose.model('Groups', searchGroupsSchema);
 
-var SearchInputFindAll = (data, callback => {
-  console.log('in database-findAll callback')
-  SearchInputModel.find(data, function(err) {
-    if (err) {
-      callback(err);
-    }
-    callback(null, 'success');
-  })
-});
+
 
 searchDB.on('error', console.error.bind(console, 'connection error:'));
 searchDB.once('open', function() {
@@ -47,5 +39,4 @@ module.exports = {
     SearchInputModel: SearchInputModel, 
     CalendarModel: CalendarModel, 
     GroupsModel: GroupsModel,
-    SearchInputFindAll, SearchInputFindAll,
 }
