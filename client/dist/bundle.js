@@ -73,9 +73,10 @@
 /*!******************************!*\
   !*** ./client/src/index.jsx ***!
   \******************************/
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("throw new Error(\"Module build failed: SyntaxError: /Users/Stanley/Desktop/HR/stanley-front-end-capstone/package.json: Error while parsing JSON - Unexpected end of JSON input\\n    at JSON.parse (<anonymous>)\\n    at ConfigChainBuilder.addConfig (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:150:65)\\n    at ConfigChainBuilder.findConfigs (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:102:30)\\n    at buildConfigChain (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/file/options/build-config-chain.js:61:13)\\n    at OptionManager.init (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/file/options/option-manager.js:354:58)\\n    at File.initOptions (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/file/index.js:212:65)\\n    at new File (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/file/index.js:135:24)\\n    at Pipeline.transform (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-core/lib/transformation/pipeline.js:46:16)\\n    at transpile (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-loader/lib/index.js:46:20)\\n    at Object.module.exports (/Users/Stanley/Desktop/HR/stanley-front-end-capstone/node_modules/babel-loader/lib/index.js:163:20)\");//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///0\n");
+"use strict";
+eval("//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiMC5qcyIsInNvdXJjZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///0\n");
 
 /***/ })
 /******/ ]);

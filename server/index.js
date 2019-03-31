@@ -1,28 +1,24 @@
 const express = require('express');
 // const cors = require('cors');
-let app = express();
-const {searchDB, SearchInputModel} = require('../database/index.js')
-const bodyParser = require('body-parser')
+const app = express();
+const bodyParser = require('body-parser');
+const { searchDB, SearchInputModel } = require('../database/index.js');
 // app.use(bodyParser.urlencoded());
 // app.use(bodyParser.json());
 // app.use(express.static(__dirname + '/../client/dist'));
 // app.use(cors())
 
 
-app.get('/Input', function (req, res, next) {
-
-    SearchInputModel.find({"city" : "North Arno"}, function(err, hostels){
-        if (err) {
-            return err;
-        }
-        res.send(hostels);
-    })
-
-
-
+app.get('/Input', (req, res) => {
+  SearchInputModel.find({ city: 'North Arno' }, (err, hostels) => {
+    if (err) {
+      return err;
+    }
+    res.send(hostels);
+  });
 });
-let port = 1128;
+const port = 1128;
 
-app.listen(port, function() {
+app.listen(port, () => {
   console.log(`listening on port ${port}`);
 });
