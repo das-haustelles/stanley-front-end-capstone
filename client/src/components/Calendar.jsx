@@ -1,57 +1,53 @@
-import Date from './Date.jsx';
+import Dates from './Dates.jsx';
 
 class Calendar extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
+    //state holds the first day of the month
+    this.state = {
+      firstDay: '',
+    }
   }
-  //--------------------------------------------------------
-  // BRAINSTORM
-  //--------------------------------------------------------
-  // firstly, lets connect the Calendar to the App - DID IT FAM
-  // Now lets add a Dates component, and create 6x7 dates
-    // should we make it a 7x7?
-    // how will we put in M T W T F S S in the first row?
-
-    // one option is to make the boxes
-    // then assign the first show invidivually (M T W etc.)
-    
-    // the second option is to hardcode M T W T
-    // the dates component will only be 6x7
-
-    // I think I like the second option better.
-
-  //--------------------------------------------------------
-  //DATES COMPONENT
-  //--------------------------------------------------------
-  // Each component can be a button?
-  // lets check how Hostelworld does it
-
-
   //--------------------------------------------------------
   // IMPLEMENTATION
   //--------------------------------------------------------
-  // Each box will be a div
-  // first row will be hard coded span tags? lets try it
+  // we need to set a new Date with a getMonth method
+
+  componentDidMount() {
+    var day = new Date();
+    day.setDate(1);
+    console.log('currentDay = ', day);
+    //Calendar's state needs to be the first day of the month
+    //still need to figure out what happens on click for next month
+    //onClick will change state to increment month and possibly year
+    this.setState({firstDay: day});
+  }
 
   weekDays() {
     return (
       <div>
-        <span>M</span>
-        <span>T</span>
-        <span>W</span>
-        <span>T</span>
-        <span>F</span>
-        <span>S</span>
-        <span>S</span>
+        <span> M </span>
+        <span> T </span>
+        <span> W </span>
+        <span> T </span>
+        <span> F </span>
+        <span> S </span>
+        <span> S </span>
       </div>
     )
   }
-
+  
+  firstDayOfMonth() {
+    var weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    var weekday = new Date();
+    return weekdays[weekday.getDay()];
+  }
+  
   render() {
     return (
       <div>
         <div>{this.weekDays()}</div>
-        <Date/>
+        <Dates firstday={this.state.firstDay}/>
       </div>
     )
   }
