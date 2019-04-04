@@ -3,40 +3,38 @@ const mongoose = require('mongoose');
 // mongoose.Promise = global.Promise;
 
 mongoose.connect('mongodb://localhost/searchBar');
-var searchDB = mongoose.connection;
+const searchDB = mongoose.connection;
 
-//search input schema
-var searchInputSchema = mongoose.Schema({
-    name: String,
-    city: String,
+// search input schema
+const searchInputSchema = mongoose.Schema({
+  name: String,
+  city: String,
 });
 
-var SearchInputModel = mongoose.model('Input', searchInputSchema);
+const SearchInputModel = mongoose.model('Input', searchInputSchema);
 
-//check in check out schema
-var searchCalendarSchema = mongoose.Schema({
-    unavailable: Number,
-})
+// check in check out schema
+const searchCalendarSchema = mongoose.Schema({
+  unavailable: Number,
+});
 
-var CalendarModel = mongoose.model('Calendar', searchCalendarSchema);
+const CalendarModel = mongoose.model('Calendar', searchCalendarSchema);
 
-//groups schema
-var searchGroupsSchema = mongoose.Schema({
-    groups: Number,
-})
+// groups schema
+const searchGroupsSchema = mongoose.Schema({
+  groups: Number,
+});
 
-var GroupsModel = mongoose.model('Groups', searchGroupsSchema);
-
-
+const GroupsModel = mongoose.model('Groups', searchGroupsSchema);
 
 searchDB.on('error', console.error.bind(console, 'connection error:'));
-searchDB.once('open', function() {
+searchDB.once('open', () => {
   console.log('database connected fam');
 });
 
 module.exports = {
-    searchDB: searchDB, 
-    SearchInputModel: SearchInputModel, 
-    CalendarModel: CalendarModel, 
-    GroupsModel: GroupsModel,
-}
+  searchDB,
+  SearchInputModel,
+  CalendarModel,
+  GroupsModel,
+};
