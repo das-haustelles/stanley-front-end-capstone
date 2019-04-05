@@ -26,9 +26,30 @@ class Calendar extends React.Component {
     return day;
   }
   
+  showMonth() {
+    var months = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ];
+
+    return months[this.changeDayToFirst().getMonth()];
+  }
+
   render() {
     return (
       <div>
+        <button> Prev </button> {this.showMonth()} {this.changeDayToFirst().getFullYear()}<button> Next </button>
+        <div></div>
         <div>{this.weekDays()}</div>
         <Dates firstday={this.changeDayToFirst()}/>
       </div>
