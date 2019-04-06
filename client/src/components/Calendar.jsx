@@ -20,7 +20,7 @@ class Calendar extends React.Component {
       </div>
     )
   }
-  changeDayToFirst() {
+  getFirstDay() {
     var day = new Date();
     day.setDate(1);
     return day;
@@ -42,16 +42,24 @@ class Calendar extends React.Component {
       'December',
     ];
 
-    return months[this.changeDayToFirst().getMonth()];
+    return months[this.getFirstDay().getMonth()];
+  }
+
+  clickNextMonth() {
+
+  }
+
+  clickPrevMonth() {
+
   }
 
   render() {
     return (
       <div>
-        <button> Prev </button> {this.showMonth()} {this.changeDayToFirst().getFullYear()}<button> Next </button>
+        <span onClick={this.clickPrevMonth()}> Prev </span> {this.showMonth()} {this.getFirstDay().getFullYear()}<span onClick={this.clickNextMonth()}> Next </span>
         <div></div>
         <div>{this.weekDays()}</div>
-        <Dates firstday={this.changeDayToFirst()}/>
+        <Dates firstday={this.getFirstDay()}/>
       </div>
     )
   }

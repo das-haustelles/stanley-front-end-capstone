@@ -16,13 +16,15 @@ class Dates extends React.Component {
 
   //dateMaker makes the Dates in the calendar
   dateMaker() {
+
     let dates = [];
     var firstDay = this.firstDayOfMonth();
+
     for (var i = 0; i < 6; i++) {
       dates.push(<div></div>)
+
       for (var j = 0; j < 7; j++) {
         var calendarDate = firstDay;
-        //key will give coordinates to each date
         dates.push(<span key={calendarDate}> {calendarDate.getDate()} </span>)
         calendarDate.setDate(calendarDate.getDate() + 1);
       }
