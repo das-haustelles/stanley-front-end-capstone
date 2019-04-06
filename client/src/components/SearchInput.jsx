@@ -6,7 +6,6 @@ class SearchInput extends React.Component {
     }
   }
   onchange(e) {
-    console.log("e.target.value = ", e.target.value)
     this.setState({text: e.target.value})
   }
 
