@@ -1,4 +1,6 @@
+import SearchInput from './components/SearchInput.jsx'
 import Calendar from './components/Calendar.jsx'
+
 
 class App extends React.Component {
   constructor() {
@@ -6,7 +8,10 @@ class App extends React.Component {
   }
   render() {
     return (
-      <Calendar/>
+      <div>
+        <SearchInput/>
+        <Calendar/>
+      </div>
     )
   }
 }
