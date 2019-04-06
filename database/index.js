@@ -15,7 +15,7 @@ const SearchInputModel = mongoose.model('Input', searchInputSchema);
 
 // check in check out schema
 const searchCalendarSchema = mongoose.Schema({
-  unavailable: Number,
+  unavailable: Array,
 });
 
 const CalendarModel = mongoose.model('Calendar', searchCalendarSchema);

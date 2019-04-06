@@ -10,13 +10,17 @@ class SearchInput extends React.Component {
     this.setState({text: e.target.value})
   }
 
+  //onclick, we need to change the class
+    //make this a toggle to change the class back on click
+  
+  //class change will show the searched elements
+
   render() {
     return (
       <form>
         <label>
-        location 
+        location
           <input onChange={(e) => this.onchange(e)} type='text' value={this.state.text}>
-
           </input>
         </label>
       </form>
