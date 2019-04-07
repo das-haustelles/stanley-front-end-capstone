@@ -9,13 +9,14 @@ const searchDB = mongoose.connection;
 const searchInputSchema = mongoose.Schema({
   name: String,
   city: String,
+  text: String,
 });
 
 const SearchInputModel = mongoose.model('Input', searchInputSchema);
 
 // check in check out schema
 const searchCalendarSchema = mongoose.Schema({
-  unavailable: Number,
+  unavailable: Array,
 });
 
 const CalendarModel = mongoose.model('Calendar', searchCalendarSchema);

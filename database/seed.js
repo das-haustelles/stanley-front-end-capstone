@@ -2,19 +2,21 @@ const faker = require('faker');
 const {
   searchDB,
   SearchInputModel,
-  Calendar,
-  Groups } = require('./index.js');
-
-// possibly drop these tables and write new ones
+  CalendarModel,
+  GroupsModel 
+} = require('./index.js');
 
 const fakeSearchInputData = [];
 const fakeGroupsData = [];
 const fakeDataMaker = () => {
   for (let i = 0; i < 100; i += 1) {
+    let hostelName = faker.name.firstName();
+    let hostelCity = faker.address.city();
     fakeSearchInputData.push(
       {
-        name: faker.name.firstName(),
-        city: faker.address.city(),
+        name: hostelName,
+        city: hostelCity,
+        text: `${hostelName} Hostel in ${hostelCity}`,
       },
     );
 
@@ -25,14 +27,16 @@ const fakeDataMaker = () => {
 };
 const fakeCalendarData = [];
 const fakeCalMaker = () => {
-  for (let i = 0; i < 100; i += 1) {
-    for (let j = 1; j <= 28; j += 1) {
-      const fakeEntry = { unavailable: [] };
+  for (let i = 0; i <= 11; i += 1) {
+    const fakeEntry = { unavailable: [] };
+
+    for (let k = 1; k <= 29; k += 1) {
       if (Math.random() > 0.75) {
-        fakeEntry.unavailable.push(i);
+        fakeEntry.unavailable.push(k);
       }
-      fakeCalendarData.push(fakeEntry);
     }
+    fakeCalendarData.push(fakeEntry);
+    console.log("fakeCalendarData = ", fakeCalendarData);
   }
 };
 
@@ -40,6 +44,7 @@ fakeDataMaker();
 fakeCalMaker();
 const insertSeachInputData = () => {
   SearchInputModel.create(fakeSearchInputData)
+    .then(() => CalendarModel.create(fakeCalendarData))
     .then(() => searchDB.disconnect());
 };
 insertSeachInputData();
