@@ -9,6 +9,7 @@ const searchDB = mongoose.connection;
 const searchInputSchema = mongoose.Schema({
   name: String,
   city: String,
+  text: String,
 });
 
 const SearchInputModel = mongoose.model('Input', searchInputSchema);

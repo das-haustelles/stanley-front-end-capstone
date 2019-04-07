@@ -6,16 +6,17 @@ const {
   GroupsModel 
 } = require('./index.js');
 
-// possibly drop these tables and write new ones
-
 const fakeSearchInputData = [];
 const fakeGroupsData = [];
 const fakeDataMaker = () => {
   for (let i = 0; i < 100; i += 1) {
+    let hostelName = faker.name.firstName();
+    let hostelCity = faker.address.city();
     fakeSearchInputData.push(
       {
-        name: faker.name.firstName(),
-        city: faker.address.city(),
+        name: hostelName,
+        city: hostelCity,
+        text: `${hostelName} Hostel in ${hostelCity}`,
       },
     );
 
@@ -47,9 +48,3 @@ const insertSeachInputData = () => {
     .then(() => searchDB.disconnect());
 };
 insertSeachInputData();
-
-// const insertCalendarData = () => {
-//   CalendarModel.create(fakeCalendarData)
-//     .then(() => searchDB.disconnect());
-// };
-// insertCalendarData();

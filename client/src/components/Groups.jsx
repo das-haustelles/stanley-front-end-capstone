@@ -1,6 +1,7 @@
 
 
 function Groups() {
+
   function options () {
     const optionsArr = [];
     for (var i = 1; i <= 80; i++) {
@@ -8,6 +9,7 @@ function Groups() {
     }
     return optionsArr
   }
+  
   return (
     <form>
       <label>

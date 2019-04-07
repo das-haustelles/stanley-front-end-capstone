@@ -1,6 +1,4 @@
-import Select from 'react-select'
-// import 'react-select/dist/react-select.css';
-import $ from 'jquery'
+import {Dropdown} from 'semantic-ui-react'
 
 class SearchInput extends React.Component {
   constructor() {
@@ -9,19 +7,17 @@ class SearchInput extends React.Component {
       text: 'search by city or hostel name',
       options: [],
     }
-    this.setOptions = this.setOptions.bind(this);
+  }
+  
+  componentDidMount() {
+    this.searchInputAPI()
   }
 
-  componentDidMount() {
-    this.searchInputAPI();
-  }
+  
+
   textInputChange(e) {
     console.log("this.state.text = ", this.state.text)
     this.setState({text: e.target.value})
-  }
-
-  setOptions(data) {
-    this.setState({options: data})
   }
 
   searchInputAPI() {
@@ -31,19 +27,28 @@ class SearchInput extends React.Component {
         return res.json();
       })
       .then((data) => {
-        this.setOptions(data)
+        this.setState({options: data});
       })
   }
 
   render() {
     return (
-      <form>
-        <label>
-        location
-          <input onChange={(e) => this.textInputChange(e)} type='text' value={this.state.text}>
-          </input>
-        </label>
-      </form>
+      <div>
+        <Dropdown
+          placeholder='Select City'
+          fluid
+          search
+          selection
+          options={this.state.options}
+    />
+      </div>
+      // <form>
+      //   <label>
+      //   location
+      //     <input onChange={(e) => this.textInputChange(e)} type='text' value={this.state.text}>
+      //     </input>
+      //   </label>
+      // </form>
     )
   }
 }
