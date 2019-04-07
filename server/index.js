@@ -12,7 +12,7 @@ app.use(cors());
 app.use(express.static(__dirname + '/../'));
 
 app.get('/Input', (req, res) => {
-  SearchInputModel.find({ city: 'North Arno' }, (err, hostels) => {
+  SearchInputModel.find({}, (err, hostels) => {
     if (err) {
       return err;
     }
