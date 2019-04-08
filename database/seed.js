@@ -3,11 +3,9 @@ const {
   searchDB,
   SearchInputModel,
   CalendarModel,
-  GroupsModel 
 } = require('./index.js');
 
 const fakeSearchInputData = [];
-const fakeGroupsData = [];
 const fakeDataMaker = () => {
   for (let i = 0; i < 100; i += 1) {
     let hostelName = faker.name.firstName();
@@ -18,10 +16,6 @@ const fakeDataMaker = () => {
         city: hostelCity,
         text: `${hostelName} Hostel in ${hostelCity}`,
       },
-    );
-
-    fakeGroupsData.push(
-      { groups: faker.random.number(80) },
     );
   }
 };
@@ -36,7 +30,6 @@ const fakeCalMaker = () => {
       }
     }
     fakeCalendarData.push(fakeEntry);
-    console.log("fakeCalendarData = ", fakeCalendarData);
   }
 };
 

@@ -1,4 +1,8 @@
+import styled from 'styled-components'
 
+const WordWrapper = styled.section`
+  color: #AEAEAE;
+`;
 
 function Groups() {
 
@@ -9,16 +13,18 @@ function Groups() {
     }
     return optionsArr
   }
-  
+
   return (
-    <form>
-      <label>
-      Guests
-        <select>
-          {options()}
-        </select>
-      </label>
-    </form>
+    <span>
+      <form>
+        <label>
+        <WordWrapper>Guests</WordWrapper>
+          <select>
+            {options()}
+          </select>
+        </label>
+      </form>
+    </span>
   )
 }
 

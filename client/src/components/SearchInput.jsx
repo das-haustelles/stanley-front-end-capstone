@@ -1,4 +1,10 @@
 import {Dropdown} from 'semantic-ui-react'
+import styled from 'styled-components';
+
+const WordWrapper = styled.section`
+  color: #AEAEAE;
+`;
+
 
 class SearchInput extends React.Component {
   constructor() {
@@ -33,22 +39,15 @@ class SearchInput extends React.Component {
 
   render() {
     return (
-      <div>
+      <span><WordWrapper>Location</WordWrapper>
         <Dropdown
           placeholder='Select City'
           fluid
           search
           selection
           options={this.state.options}
-    />
-      </div>
-      // <form>
-      //   <label>
-      //   location
-      //     <input onChange={(e) => this.textInputChange(e)} type='text' value={this.state.text}>
-      //     </input>
-      //   </label>
-      // </form>
+        />
+      </span>
     )
   }
 }
