@@ -48,13 +48,6 @@ class SearchInput extends React.Component {
           options={this.state.options}
         />
       </span>
-      // <form>
-      //   <label>
-      //   location
-      //     <input onChange={(e) => this.textInputChange(e)} type='text' value={this.state.text}>
-      //     </input>
-      //   </label>
-      // </form>
     )
   }
 }

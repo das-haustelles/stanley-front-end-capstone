@@ -1,12 +1,13 @@
 import Dates from './Dates.jsx';
 import styled from 'styled-components';
 
-const WordWrapper = styled.section`
+const WordWrapper = styled.span`
 color: #AEAEAE;
 `;
 
 const Wrapper = styled.section`
 background: white;
+margin-right: 5px;
 `;
 
 class Calendar extends React.Component {
