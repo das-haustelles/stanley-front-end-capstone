@@ -1,4 +1,13 @@
 import Dates from './Dates.jsx';
+import styled from 'styled-components';
+
+const WordWrapper = styled.section`
+color: #AEAEAE;
+`;
+
+const Wrapper = styled.section`
+background: white;
+`;
 
 class Calendar extends React.Component {
   constructor(props) {
@@ -81,17 +90,19 @@ class Calendar extends React.Component {
     if (clickedCalendar) {
       console.log('calendar clicked')
       return (
-        <div onClick={this.toggleCalendar}>
-          <span onClick={this.clickPrevMonth()}> Prev </span> {this.showMonth()} {this.getFirstDay().getFullYear()}<span onClick={this.clickNextMonth()}> Next </span>
+        <Wrapper>
+        <span onClick={this.toggleCalendar}>
+          <span onClick={this.clickPrevMonth()}> Prev </span> {this.showMonth()} <WordWrapper>{this.getFirstDay().getFullYear()}</WordWrapper><span onClick={this.clickNextMonth()}> Next </span>
           <div></div>
           <div>{this.weekDays()}</div>
           <Dates firstday={this.getFirstDay()}/>
-        </div>
+        </span>
+        </Wrapper>
       )
     }
     else {
       return (
-        <div onClick={this.toggleCalendar}>Cal Icon</div>
+        <span onClick={this.toggleCalendar}><WordWrapper>Cal Icon</WordWrapper></span>
       )
     }
   }

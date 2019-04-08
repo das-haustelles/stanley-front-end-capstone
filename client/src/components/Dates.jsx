@@ -1,4 +1,8 @@
+import styled from 'styled-components';
 
+const Wrapper = styled.section`
+  background: white;
+`;
 
 class Dates extends React.Component {
   constructor(props) {
@@ -35,7 +39,9 @@ class Dates extends React.Component {
   render() {
     return (
       <div>
+        <Wrapper>
         <div>{this.dateMaker()}</div>
+        </Wrapper>
       </div>
     )
   }
