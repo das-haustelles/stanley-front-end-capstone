@@ -2,7 +2,7 @@ import {Dropdown} from 'semantic-ui-react'
 import styled from 'styled-components';
 
 const WordWrapper = styled.section`
-color: #AEAEAE;
+  color: #AEAEAE;
 `;
 
 

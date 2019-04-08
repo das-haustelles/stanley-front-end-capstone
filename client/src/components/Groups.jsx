@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const WordWrapper = styled.section`
-color: #AEAEAE;
+  color: #AEAEAE;
 `;
 
 function Groups() {
