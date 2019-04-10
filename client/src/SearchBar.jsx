@@ -6,7 +6,7 @@ const DarkGreyColor = styled.div`
   padding: 4em;
   background-color: #2B2A2A;
 `;
-class App extends React.Component {
+class SearchBar extends React.Component {
   constructor() {
     super();
   }
@@ -22,5 +22,5 @@ class App extends React.Component {
   }
 }
 
-export default App;
-window.Searchbar = App;
+export default SearchBar;
+window.Searchbar = SearchBar;
