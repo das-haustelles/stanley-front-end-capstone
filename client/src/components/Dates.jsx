@@ -1,6 +1,4 @@
-import styled from 'styled-components';
-
-const Wrapper = styled.section`
+const DateColor = styled.div`
   background: white;
   margin-right: 5px;
   margin-left: 5px;
@@ -40,9 +38,9 @@ class Dates extends React.Component {
 
   render() {
     return (
-        <Wrapper>
+        <DateColor>
         <div>{this.dateMaker()}</div>
-        </Wrapper>
+        </DateColor>
     )
   }
 }

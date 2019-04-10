@@ -1,7 +1,6 @@
 import {Dropdown} from 'semantic-ui-react'
-import styled from 'styled-components';
 
-const WordWrapper = styled.section`
+const GreyLocationColor = styled.div`
   color: #AEAEAE;
 `;
 
@@ -28,7 +27,7 @@ class SearchInput extends React.Component {
 
   searchInputAPI() {
 
-    fetch('http://localhost:1128/Input')
+    fetch('http://localhost:3003/Input')
       .then((res) => {
         return res.json();
       })
@@ -39,7 +38,7 @@ class SearchInput extends React.Component {
 
   render() {
     return (
-      <span><WordWrapper>Location</WordWrapper>
+      <span><GreyLocationColor>Location</GreyLocationColor>
         <Dropdown
           placeholder='Select City'
           fluid

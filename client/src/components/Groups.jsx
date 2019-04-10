@@ -1,6 +1,4 @@
-import styled from 'styled-components'
-
-const WordWrapper = styled.section`
+const GreyGuestColor = styled.div`
   color: #AEAEAE;
 `;
 
@@ -18,7 +16,7 @@ function Groups() {
     <span>
       <form>
         <label>
-        <WordWrapper>Guests</WordWrapper>
+        <GreyGuestColor>Guests</GreyGuestColor>
           <select>
             {options()}
           </select>

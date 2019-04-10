@@ -1,11 +1,10 @@
-import styled from 'styled-components';
 import Dates from './Dates.jsx';
 
-const WordWrapper = styled.span`
+const YearOfCalColor = styled.span`
   color: #AEAEAE;
 `;
 
-const Wrapper = styled.section`
+const CalendarColor = styled.div`
   background: white;
   margin-right: 5px;
 `;
@@ -72,22 +71,22 @@ class Calendar extends React.Component {
 
     if (clickedCalendar) {
       return (
-        <Wrapper>
+        <CalendarColor>
           <span onClick={this.toggleCalendar}>
             <span onClick={this.clickPrevMonth()}> Prev </span> 
-              {this.showMonth()} <WordWrapper>{this.getFirstDay().getFullYear()}</WordWrapper>
+              {this.showMonth()} <YearOfCalColor>{this.getFirstDay().getFullYear()}</YearOfCalColor>
               <span onClick={this.clickNextMonth()}> Next </span>
             <div></div>
             <div>{this.weekDays()}</div>
             <Dates firstday={this.getFirstDay()}/>
           </span>
-        </Wrapper>
+        </CalendarColor>
       )
     }
     else {
       return (
         <span onClick={this.toggleCalendar}>
-          <WordWrapper>Cal Icon</WordWrapper>
+          <YearOfCalColor>Cal Icon</YearOfCalColor>
         </span>
       )
     }
