@@ -1,7 +1,6 @@
-import styled from 'styled-components';
 import Dates from './Dates.jsx';
 
-const GreyColor = styled.span`
+const YearOfCalColor = styled.span`
   color: #AEAEAE;
 `;
 
@@ -75,7 +74,7 @@ class Calendar extends React.Component {
         <CalendarColor>
           <span onClick={this.toggleCalendar}>
             <span onClick={this.clickPrevMonth()}> Prev </span> 
-              {this.showMonth()} <GreyColor>{this.getFirstDay().getFullYear()}</GreyColor>
+              {this.showMonth()} <YearOfCalColor>{this.getFirstDay().getFullYear()}</YearOfCalColor>
               <span onClick={this.clickNextMonth()}> Next </span>
             <div></div>
             <div>{this.weekDays()}</div>
@@ -87,7 +86,7 @@ class Calendar extends React.Component {
     else {
       return (
         <span onClick={this.toggleCalendar}>
-          <GreyColor>Cal Icon</GreyColor>
+          <YearOfCalColor>Cal Icon</YearOfCalColor>
         </span>
       )
     }

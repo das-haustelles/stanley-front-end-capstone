@@ -1,5 +1,3 @@
-import styled from 'styled-components';
-
 const DateColor = styled.div`
   background: white;
   margin-right: 5px;

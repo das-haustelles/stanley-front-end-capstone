@@ -1,5 +1,3 @@
-import styled from 'styled-components'
-
 const GreyGuestColor = styled.div`
   color: #AEAEAE;
 `;

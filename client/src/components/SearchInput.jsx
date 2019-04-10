@@ -1,5 +1,4 @@
 import {Dropdown} from 'semantic-ui-react'
-import styled from 'styled-components';
 
 const GreyLocationColor = styled.div`
   color: #AEAEAE;
@@ -28,7 +27,7 @@ class SearchInput extends React.Component {
 
   searchInputAPI() {
 
-    fetch('http://localhost:1128/Input')
+    fetch('http://localhost:3003/Input')
       .then((res) => {
         return res.json();
       })
